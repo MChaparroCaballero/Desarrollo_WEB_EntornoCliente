@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="parrafo1">ccc</p>
+    <script>
+
+       
+
+        function calculadoraAvanzada(primerNumero, segundoNumero){
+
+            let multiplicacion=primerNumero*10;
+            let suma=multiplicacion+segundoNumero;
+            let divisibleEntre3=(suma%3===0);
+            let resta = primerNumero-segundoNumero;
+            let mayor50= suma>50;
+            let divisibleEntre5= (suma%5===0);
+            let operacionLogica= mayor50 && divisibleEntre5;
+
+            let resultado=multiplicacion + " " + suma + " " + divisibleEntre3 + " " + resta + " " + mayor50 + " " + divisibleEntre5 + " " + operacionLogica;    
+            return resultado;
+        
+        }
+        
+      document.getElementById("parrafo1").innerText=calculadoraAvanzada(5, 2);
+
+           
+    </script>
+</body>
+</html>
