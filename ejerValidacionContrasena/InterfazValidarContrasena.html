@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let password;  
+    let valid=false
+
+    do{
+         password = prompt("Meteme una contraseña con 8 carcteres, uno especial minimo un numero y una mayuscula");
+         const longitud=password.length>=8;
+         const tieneNumero=/\d/.test(password);
+         const tieneMayuscula=/[A-Z]/.test(password);
+         const tieneCaracterEspecial=/[!@#$%&*()=?¿^*¨Ç;,.-_]/.test(password);
+
+        if(longitud && tieneNumero && tieneMayuscula && tieneCaracterEspecial){
+        valid= true;
+        alert("contraseña valida");
+        }else{
+        alert("contraseña invalida");
+        }
+    }
+    while(!valid);
+
+    </script>
+</body>
+</html>
