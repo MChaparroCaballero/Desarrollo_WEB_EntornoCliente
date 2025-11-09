@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       #galeria{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 50px;
+       } 
+       #galeria img{
+        border: 3px solid black;
+       }
+
+       #expansion{
+        display: flex; 
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center;
+        margin-top: 50px;
+       }
+       #expansion img{
+         border: 3px solid black;
+       }
+
+       #bienenida{
+        text-align: center;
+       }
+
+       #expansion h1{
+        text-align: center;
+       }
+    </style>
+    <script>
+        let imagenes = ["brownie.png", "churros.png", "magdalena.png", "napolitana.png"];
+        let indice = Math.floor(Math.random() * imagenes.length);
+       // document.write('<img src="' + imagenes[indice] + '" alt="Imagen aleatoria">');
+
+
+       function zoom(imgElement){
+        imgElement.style.transform = "scale(1.3)";
+        imgElement.style.zIndex = '10';
+        imgElement.style.borderColor = 'red';
+       }
+       function normal(imgElement){
+        imgElement.style.transform = "scale(1)";
+        imgElement.style.zIndex = '1';
+        imgElement.style.borderColor = 'black';
+       }
+
+       function teLaMeto(ruta){
+        document.getElementById("expansion").innerHTML = ' <div><img src="' + ruta + '.png" alt="Imagen ampliada" height="300px" width="300px" border: 3px solid black><h1>'+ ruta.substring(4) +'</h1></div>';
+       }
+    </script>
+
+    <div id="bienenida">
+    <h1>Bienvenido a la galeria</h1>
+    <h2>Haz clic en una imagen para verla más grande.</h2>
+    </div>
+    <div id="galeria">
+    <img src="img/brownie.png" alt="Brownie" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/brownie'))">
+    <img src="img/churros.png" alt="Churros" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/churros'))">
+    <img src="img/magdalena.png" alt="Magdalena" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/magdalena'))">
+    <img src="img/napolitana.png" alt="Napolitana" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/napolitana'))">
+    <img src="img/donuts.png" alt="Napolitana" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/donuts'))">
+    <img src="img/tarta.png" alt="Napolitana" height="100px" width="100px" onmouseover="zoom(this)" onmouseout="normal(this)" onclick="(teLaMeto('img/tarta'))">
+      
+</div>
+    <div id="expansion"></div>
+
+</body>
+</html>
