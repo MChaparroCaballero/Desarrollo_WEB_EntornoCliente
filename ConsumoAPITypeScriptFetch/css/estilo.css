@@ -1,0 +1,105 @@
+/* Reset general para tipografía moderna */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+/* 1. Mensaje de Carga tipo "Card" */
+#cargando {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Definimos el cuadrado */
+    width: 200px;  
+    height: 200px;
+    
+    /* Apariencia de Card */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 1000;
+    
+    /* Centrado total del texto dentro del cuadrado */
+    display: none; /* Se cambia a flex en TS */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: blue;
+}
+
+/* Asegurar que el card-body ocupe todo el espacio */
+#cargando .card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* 2. Tabla Estilo Moderno (Bootstrap-like) */
+#contenedorTabla {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#tablaUsuarios {
+    width: 90%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden; /* Para que los bordes redondeados funcionen */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#tablaUsuarios th {
+    background-color: #000000; /* Gris oscuro elegante */
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+#tablaUsuarios td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6; /* Línea simple y fina */
+    color: #495057;
+}
+
+/* Efecto cebra: filas alternas */
+#tablaUsuarios tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#contenedorBoton{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin-top: 20px;
+}
+/* Botón Verdecito */
+#btnActualizar {
+    display: none;
+    margin-right: 60px;
+    padding: 10px 25px;
+    background-color: #000000; /* Verde Bootstrap */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#btnActualizar:hover {
+    background-color: #333333;
+}
+
+#titulo{
+    margin-bottom: 10%;
+}
